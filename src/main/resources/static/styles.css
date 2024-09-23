@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1400px; /* Increase the maximum width */
+    margin: auto;
+    background: white;
+    padding: 40px; /* Increase padding for more space */
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow for depth */
+}
+
+h1 {
+    color: #333;
+}
+
+h2 {
+    color: #555;
+}
+
+.form-section {
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, button, select {
+    margin: 5px 0;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%; /* Set width to 100% to fill the container */
+    max-width: 300px; /* Optional: Set a maximum width for inputs and buttons */
+    height: 40px; /* Set a consistent height for all fields */
+    box-sizing: border-box; /* Ensure padding is included in the total width/height */
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.result-section {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+}
