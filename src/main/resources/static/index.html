@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .form-section form {
+            display: flex;
+            flex-direction: row; /* Ensure elements are in a row */
+            align-items: center; /* Center align items vertically */
+            gap: 10px; /* Space between elements */
+        }
+        .form-section form input,
+        .form-section form select,
+        .form-section form button {
+            flex: 1; /* Allow inputs to grow and fill space */
+            min-width: 100px; /* Set a minimum width for inputs */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Account Management</h1>
+
+        <section class="form-section">
+            <h2>Get Accounts</h2>
+            <button id="loadAccounts">Load Accounts</button>
+            <ul id="accountList"></ul>
+        </section>
+
+        <section class="form-section">
+            <h2>Create Account</h2>
+            <form id="createAccountForm">
+                <input type="text" id="client" placeholder="Client Name" required autocomplete="off">
+                <input type="number" id="amount" placeholder="Initial Amount" autocomplete="off"> <!-- Removed required attribute -->
+                <input type="text" id="additionalInfo" placeholder="Additional Info (optional)" autocomplete="off"> <!-- New input for additional info -->
+                <button type="submit">Create Account</button>
+            </form>
+        </section>
+
+        <section class="form-section">
+            <h2>Update Account</h2>
+            <form id="updateAccountForm">
+                <select id="updateAccountId" required> <!-- Dropdown for Account IDs -->
+                    <option value="" disabled selected>Select Account ID</option>
+                    <!-- Options will be populated dynamically -->
+                </select>
+                <input type="text" id="updateClient" placeholder="Client Name" readonly autocomplete="off"> <!-- Read-only Client Name -->
+                <input type="number" id="updateAmount" placeholder="Amount" readonly autocomplete="off"> <!-- Read-only Amount -->
+                <input type="text" id="updateAdditionalInfo" placeholder="Additional Info" required autocomplete="off"> <!-- Editable Additional Info -->
+                <button type="submit">Update Account</button>
+            </form>
+        </section>
+
+        <section class="form-section">
+            <h2>Delete Account</h2>
+            <form id="deleteAccountForm">
+                <select id="deleteAccountId" required> <!-- Dropdown for Account IDs -->
+                    <option value="" disabled selected>Select Account ID</option>
+                    <!-- Options will be populated dynamically -->
+                </select>
+                <button type="submit">Delete Account</button>
+            </form>
+        </section>
+
+        <section class="form-section">
+            <h2>Transactions</h2>
+            <form id="transactionForm">
+                <select id="transactionType">
+                    <option value="deposit">Deposit</option>
+                    <option value="withdraw">Withdraw</option>
+                    <option value="transfer">Transfer</option>
+                </select>
+                <select id="fromId" style="display: none;"> <!-- Changed to dropdown -->
+                    <option value="" disabled selected>Select From Account ID</option>
+                    <!-- Options will be populated dynamically -->
+                </select>
+                <select id="toId" style="display: none;"> <!-- Changed to dropdown -->
+                    <option value="" disabled selected>Select To Account ID</option>
+                    <!-- Options will be populated dynamically -->
+                </select>
+                <input type="number" id="transactionAmount" placeholder="Amount" required autocomplete="off">
+                <button type="submit">Submit Transaction</button>
+            </form>
+        </section>
+
+        <section class="result-section">
+            <h2>Results</h2>
+            <div id="resultMessage"></div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
